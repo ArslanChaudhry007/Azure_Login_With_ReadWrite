@@ -1,0 +1,15 @@
+{
+  "client_id": "c5ac5b2d-ebfe-4041-8b61-2613c03109b6",
+  "authorization_user_agent": "WEBVIEW",
+  "redirect_uri": "msauth.com.quest.iqprospects://auth",
+  "account_mode": "SINGLE",
+  "authorities": [
+    {
+      "type": "AAD",
+      "audience": {
+        "type": "AzureADMyOrg",
+        "tenant_id": "6fa8f164-0360-4846-adce-875b7fd30a7d"
+      }
+    }
+  ]
+}
