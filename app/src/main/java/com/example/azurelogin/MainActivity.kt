@@ -42,7 +42,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         converRawIntoJson()
         writeStringAsFile(data, fileName)
         readToFile(context)
@@ -50,10 +49,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
     }
+
     //creat json file like raw file
     private fun converRawIntoJson() {
         val audiance = Authloginazure.Audience()
-        audiance.tenant_id = "6fa8f164-0360-4846-adce-875b7fd30a7d"
+        audiance.tenant_id = "ENTER YOUR TENANT ID HERE"
         audiance.type = "AzureADMyOrg"
 
         authority.add(
@@ -72,8 +72,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         data = Gson().toJson(authLogin)
     }
-  //creat file and set json data on it
-   private fun writeStringAsFile(fileContents: String, fileName: String) {
+
+    //creat file and set json data on it
+    private fun writeStringAsFile(fileContents: String, fileName: String) {
         val context: Context = this
         try {
             val out = FileWriter(File(context.filesDir, fileName))
@@ -83,6 +84,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             Log.e("Exception", "File write failed: " + e.toString())
         }
     }
+
     //read data from file and call MSLA
     private fun readToFile(context: Context) {
         try {
