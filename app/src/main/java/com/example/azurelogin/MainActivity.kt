@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     //creat json file like raw file
     private fun converRawIntoJson() {
         val audiance = Authloginazure.Audience()
-        audiance.tenant_id = "ENTER YOUR TENANT ID HERE"
+        audiance.tenant_id = "ENTER YOUR TENANT_ID HERE"
         audiance.type = "AzureADMyOrg"
 
         authority.add(
@@ -66,8 +66,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             "SINGLE",
             authority,
             "WEBVIEW",
-            "c5ac5b2d-ebfe-4041-8b61-2613c03109b6",
-            "msauth.com.quest.iqprospects://auth"
+            "ENTER CLIENT ID HERE",
+            "ENTER REDIRECT URI HERE"
         )
 
         data = Gson().toJson(authLogin)
